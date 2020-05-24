@@ -4,6 +4,7 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>Entities.Borrowers</class>
     <class>Entities.Books</class>
+    <class>Entities.Users</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/librarymanagement?serverTimezone=UTC"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

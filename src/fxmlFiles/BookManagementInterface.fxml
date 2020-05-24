@@ -37,7 +37,6 @@
                   <Insets left="8.0" top="30.0" />
                </VBox.margin>
                <children>
-                  <Button fx:id="buttonSearch" mnemonicParsing="false" onAction="#buttonSearchHandle" text="Search For Book" />
                   <Button fx:id="buttonShow" mnemonicParsing="false" onAction="#buttonShowHandle" text="Show" />
                   <Button fx:id="buttonDelete" mnemonicParsing="false" onAction="#buttonDeleteHandle" text="Delete Book" />
                   <Button fx:id="buttonUpdateBook" mnemonicParsing="false" onAction="#buttonUpdateBookHandle" text="Update Book" />

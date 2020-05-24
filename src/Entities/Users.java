@@ -6,18 +6,12 @@
 package Entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -28,25 +22,14 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author manso
  */
 @Entity
-@Table(name = "books")
+@Table(name = "users")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Books.findAll", query = "SELECT b FROM Books b")
-    , @NamedQuery(name = "Books.findById", query = "SELECT b FROM Books b WHERE b.id = :id")
-    , @NamedQuery(name = "Books.findByName", query = "SELECT b FROM Books b WHERE b.name = :name")
-    , @NamedQuery(name = "Books.findByDescription", query = "SELECT b FROM Books b WHERE b.description = :description")
-    , @NamedQuery(name = "Books.findByAuthor", query = "SELECT b FROM Books b WHERE b.author = :author")})
-public class Books implements Serializable {
-    
-     @ManyToMany(cascade = {
-        CascadeType.PERSIST,
-        CascadeType.MERGE
-    })
-    @JoinTable(name = "borrowed_boooks",
-        joinColumns = @JoinColumn(name = "book_id"),
-        inverseJoinColumns = @JoinColumn(name = "borrower_id")
-    )
-    private List<Borrowers> borrowers = new ArrayList<>();
+    @NamedQuery(name = "Users.findAll", query = "SELECT u FROM Users u")
+    , @NamedQuery(name = "Users.findById", query = "SELECT u FROM Users u WHERE u.id = :id")
+    , @NamedQuery(name = "Users.findByName", query = "SELECT u FROM Users u WHERE u.name = :name")
+    , @NamedQuery(name = "Users.findByPassword", query = "SELECT u FROM Users u WHERE u.password = :password")})
+public class Users implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -56,15 +39,13 @@ public class Books implements Serializable {
     private Integer id;
     @Column(name = "name")
     private String name;
-    @Column(name = "description")
-    private String description;
-    @Column(name = "author")
-    private String author;
+    @Column(name = "password")
+    private String password;
 
-    public Books() {
+    public Users() {
     }
 
-    public Books(Integer id) {
+    public Users(Integer id) {
         this.id = id;
     }
 
@@ -84,20 +65,12 @@ public class Books implements Serializable {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getPassword() {
+        return password;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
@@ -110,10 +83,10 @@ public class Books implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Books)) {
+        if (!(object instanceof Users)) {
             return false;
         }
-        Books other = (Books) object;
+        Users other = (Users) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -122,7 +95,7 @@ public class Books implements Serializable {
 
     @Override
     public String toString() {
-        return "pkgfinal.Books[ id=" + id + " ]";
+        return "Entities.Users[ id=" + id + " ]";
     }
     
 }

@@ -30,7 +30,7 @@ public class Final extends Application {
         this.primaryStage = primaryStage;
         StackPane root = new StackPane();
         System.out.println(getClass().getClassLoader().getResource("fxmlFiles/BookManagementInterface.fxml"));
-        root.getChildren().add(FXMLLoader.load(getClass().getClassLoader().getResource("fxmlFiles/BookManagementInterface.fxml")));
+        root.getChildren().add(FXMLLoader.load(getClass().getClassLoader().getResource("fxmlFiles/MainInterface.fxml")));
         
         Scene scene = new Scene(root);
         
@@ -86,7 +86,7 @@ public class Final extends Application {
      public static void showEditBorrowerStage() throws Exception{
         
         StackPane root = new StackPane();
-        root.getChildren().add(FXMLLoader.load(Final.class.getResource("\\EditBorrower.fxml")));
+        root.getChildren().add(FXMLLoader.load(Final.class.getClassLoader().getResource("fxmlFiles/EditBorrower.fxml")));
         //Scene scene = new Scene(root);
         Stage dialog = new Stage();
         dialog.setTitle("Edit Student");
@@ -105,10 +105,10 @@ public class Final extends Application {
       public static void showAddBorrowerStage() throws Exception{
         
         StackPane root = new StackPane();
-        root.getChildren().add(FXMLLoader.load(Final.class.getResource("\\AddBorrower.fxml")));
+        root.getChildren().add(FXMLLoader.load(Final.class.getClassLoader().getResource("fxmlFiles/AddBorrower.fxml")));
         //Scene scene = new Scene(root);
         Stage dialog = new Stage();
-        dialog.setTitle("Edit Student");
+        dialog.setTitle("Edit Borrower");
         dialog.initModality(Modality.WINDOW_MODAL);
         dialog.initOwner(primaryStage);
         Scene scene = new Scene(root);
@@ -126,7 +126,7 @@ public class Final extends Application {
      public static void showMainInterface() throws Exception{
         
         StackPane root = new StackPane();
-        root.getChildren().add(FXMLLoader.load(Final.class.getResource("\\MainInterface.fxml")));
+        root.getChildren().add(FXMLLoader.load(Final.class.getClassLoader().getResource("fxmlFiles/MainInterface.fxml")));
         //Scene scene = new Scene(root);
         Stage dialog = new Stage();
         dialog.setTitle("Register");
@@ -145,7 +145,7 @@ public class Final extends Application {
      public static void showBookManagementInterface() throws Exception{
         
         StackPane root = new StackPane();
-        root.getChildren().add(FXMLLoader.load(Final.class.getResource("\\BookManagementInterface.fxml")));
+        root.getChildren().add(FXMLLoader.load(Final.class.getClassLoader().getResource("fxmlFiles/BookManagementInterface.fxml")));
         //Scene scene = new Scene(root);
         Stage dialog = new Stage();
         dialog.setTitle("Register");
@@ -166,7 +166,7 @@ public class Final extends Application {
      public static void showBorrowerManagementInterface() throws Exception{
         
         StackPane root = new StackPane();
-        root.getChildren().add(FXMLLoader.load(Final.class.getResource("\\BorrowersManagementInterface.fxml")));
+        root.getChildren().add(FXMLLoader.load(Final.class.getClassLoader().getResource("fxmlFiles/BorrowersManagementInterface.fxml")));
         //Scene scene = new Scene(root);
         Stage dialog = new Stage();
         dialog.setTitle("Register");

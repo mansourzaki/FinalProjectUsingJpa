@@ -6,10 +6,16 @@
 package Entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -32,6 +38,10 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Borrowers.findByAddress", query = "SELECT b FROM Borrowers b WHERE b.address = :address")
     , @NamedQuery(name = "Borrowers.findByGender", query = "SELECT b FROM Borrowers b WHERE b.gender = :gender")})
 public class Borrowers implements Serializable {
+    @ManyToMany(mappedBy = "borrowers")
+    private List<Books> books = new ArrayList<>();
+    
+    
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -63,6 +73,7 @@ public class Borrowers implements Serializable {
     public Borrowers(Integer id) {
         this.id = id;
     }
+    
 
     public Borrowers(Integer id, String firstName, String lastName, int mobile, String email, String address, String gender) {
         this.id = id;
@@ -82,19 +93,19 @@ public class Borrowers implements Serializable {
         this.id = id;
     }
 
-    public String getFirstName() {
+    public String getFirst_Name() {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirst_Name(String firstName) {
         this.firstName = firstName;
     }
 
-    public String getLastName() {
+    public String getLast_Name() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLast_Name(String lastName) {
         this.lastName = lastName;
     }
 
@@ -154,5 +165,7 @@ public class Borrowers implements Serializable {
     public String toString() {
         return "pkgfinal.Borrowers[ id=" + id + " ]";
     }
+
+   
     
 }

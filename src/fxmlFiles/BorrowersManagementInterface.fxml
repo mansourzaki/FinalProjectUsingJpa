@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="422.0" prefWidth="652.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkgfinal.BorrowersManagementInterfaceController">
+   <children>
+      <VBox layoutX="8.0" layoutY="14.0" prefHeight="373.0" prefWidth="624.0" style="-fx-background-color: orange;">
+         <children>
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="271.0" prefWidth="582.0">
+               <children>
+                  <Label text="Borrowers Management">
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tableView" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="230.0" prefWidth="602.0">
+                     <columns>
+                        <TableColumn fx:id="tvId" prefWidth="75.0" text="ID" />
+                        <TableColumn fx:id="tvFirstName" prefWidth="75.0" text="First Name" />
+                        <TableColumn fx:id="tvLastName" prefWidth="75.0" text="Last Name" />
+                        <TableColumn fx:id="tvMobile" prefWidth="75.0" text="Mobile" />
+                        <TableColumn fx:id="tvEmail" prefWidth="150.0" text="Email" />
+                        <TableColumn fx:id="tvAddress" prefWidth="75.0" text="Address" />
+                        <TableColumn fx:id="tvGender" prefWidth="75.0" text="Gender" />
+                     </columns>
+                     <VBox.margin>
+                        <Insets left="43.0" />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="58.0" prefWidth="530.0" spacing="10.0" style="-fx-background-color: #756666;">
+               <VBox.margin>
+                  <Insets left="50.0" top="30.0" />
+               </VBox.margin>
+               <children>
+                  <Button fx:id="buttonShow" mnemonicParsing="false" onAction="#buttonShowHandle" text="Show" />
+                  <Button fx:id="buttondeleteborrower" mnemonicParsing="false" onAction="#buttonDeleteBorrowerHandle" text="Delete Borrower" />
+                  <Button fx:id="buttonUpdateBorrower" mnemonicParsing="false" onAction="#buttonUpdateBorrowerHandle" text="Update Borrower" />
+                  <Button fx:id="buttonaddborrower" mnemonicParsing="false" onAction="#buttonAddBorrowerHandle" text="Add Borrower" />
+               </children>
+               <padding>
+                  <Insets bottom="50.0" top="50.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets top="20.0" />
+               </opaqueInsets>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

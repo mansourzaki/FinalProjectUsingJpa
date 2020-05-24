@@ -77,7 +77,7 @@ public class BookManagementInterfaceConroller implements Initializable {
 
     @FXML
     private void buttonShowHandle(ActionEvent event) throws SQLException {
-       EntityManager em = emf.createEntityManager();
+        EntityManager em = emf.createEntityManager();
         List<Books> books = em.createNamedQuery("Books.findAll").getResultList();
         tableView.getItems().setAll(books);
     }
