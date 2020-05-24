@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkgfinal.BorrowedBooksConroller">
+   <children>
+      <VBox layoutX="26.0" layoutY="14.0" prefHeight="373.0" prefWidth="549.0" style="-fx-background-color: orange;">
+         <children>
+            <VBox alignment="CENTER" prefHeight="271.0" prefWidth="549.0">
+               <children>
+                  <Label text="Borrowed Books">
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tableView" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="242.0" prefWidth="302.0">
+                     <columns>
+                        <TableColumn fx:id="tvId" prefWidth="75.0" text="Book_id" />
+                        <TableColumn fx:id="tvName" prefWidth="75.0" text="Borrower_id" />
+                        <TableColumn fx:id="tvDescreption" prefWidth="75.0" text="Description" />
+                        <TableColumn fx:id="tvAuthor" prefWidth="75.0" text="Author" />
+                     </columns>
+                  </TableView>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="58.0" prefWidth="530.0" spacing="10.0" style="-fx-background-color: #756666;">
+               <VBox.margin>
+                  <Insets left="8.0" top="30.0" />
+               </VBox.margin>
+               <children>
+                  <Button fx:id="buttonShow" mnemonicParsing="false" onAction="#buttonShowHandle" text="Show" />
+                  <Button fx:id="buttonReturn" mnemonicParsing="false" onAction="#buttonReturnHandle" text="Return Book" />
+               </children>
+               <padding>
+                  <Insets bottom="50.0" top="50.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets top="20.0" />
+               </opaqueInsets>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

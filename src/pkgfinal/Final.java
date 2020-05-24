@@ -17,6 +17,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import org.eclipse.persistence.config.PersistenceUnitProperties;
 
 /**
  *
@@ -25,12 +26,15 @@ import javafx.stage.Stage;
 public class Final extends Application {
     
    static Stage primaryStage;
+   // private Object propertiesMap;
     @Override
     public void start(Stage primaryStage) throws IOException {
+         
+       // propertiesMap.put(PersistenceUnitProperties.LOGGING_FILE, "D:\\Java Projects 2\\Final\\output.log");
         this.primaryStage = primaryStage;
         StackPane root = new StackPane();
         System.out.println(getClass().getClassLoader().getResource("fxmlFiles/BookManagementInterface.fxml"));
-        root.getChildren().add(FXMLLoader.load(getClass().getClassLoader().getResource("fxmlFiles/MainInterface.fxml")));
+        root.getChildren().add(FXMLLoader.load(getClass().getClassLoader().getResource("fxmlFiles/login.fxml")));
         
         Scene scene = new Scene(root);
         

@@ -29,6 +29,7 @@ public class LoginController implements Initializable {
 
     @FXML
     private TextField textFieldusername;
+   
     @FXML
     private TextField textFieldPassword;
     @FXML
@@ -36,7 +37,8 @@ public class LoginController implements Initializable {
     @FXML
     private Label labelStatus;
     private EntityManagerFactory emf;
-
+   // public static String loginid = "";
+    
     /**
      * Initializes the controller class.
      */
@@ -51,6 +53,7 @@ public class LoginController implements Initializable {
         if (textFieldusername.getText().equals("root") && textFieldPassword.getText().equals("123456789") ) {
             Final.showMainInterface();
             labelStatus.setText("Great!");
+          //  loginid = textFieldusername.getText();
         }else{
         labelStatus.setText("Incorrecrt username Or Password");
         labelStatus.setStyle("-fx-text-fill: red;");

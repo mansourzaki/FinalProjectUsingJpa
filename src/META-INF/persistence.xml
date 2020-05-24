@@ -11,6 +11,21 @@
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
       <property name="javax.persistence.jdbc.password" value="12345678"/>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
+      
+      <property name="eclipselink.logging.file" value="output.log" />
+      <property name="eclipselink.logging.logger" value="JavaLogger"/>
+      
+      <property name="eclipselink.logging.level" value="FINE"/>
+      
+      <property name="eclipselink.logging.level.sql" value="FINE"/>
+      <property name="eclipselink.logging.parameters" value="true"/>
+      <property name="eclipselink.logging.timestamp" value="true"/>
+      <property name="eclipselink.logging.session" value="true"/>
+      <property name="eclipselink.logging.thread" value="false"/>
+      <property name="eclipselink.logging.exceptions" value="true"/>
+      <property name="eclipselink.logging.logger" value="ServerLogger"/>
+      
+      
     </properties>
   </persistence-unit>
 </persistence>

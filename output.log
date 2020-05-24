@@ -1,0 +1,22 @@
+[EL Info]: 2020-05-24 11:43:57.662--ServerSession(987937555)--EclipseLink, version: Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd
+[EL Fine]: connection: 2020-05-24 11:43:57.67--Detected database platform: org.eclipse.persistence.platform.database.MySQLPlatform
+[EL Config]: connection: 2020-05-24 11:43:57.67--ServerSession(987937555)--Connection(110896091)--connecting(DatabaseLogin(
+	platform=>MySQLPlatform
+	user name=> "root"
+	datasource URL=> "jdbc:mysql://localhost:3306/librarymanagement?serverTimezone=UTC"
+))
+[EL Config]: connection: 2020-05-24 11:43:57.678--ServerSession(987937555)--Connection(33650007)--Connected: jdbc:mysql://localhost:3306/librarymanagement?serverTimezone=UTC
+	User: root@localhost
+	Database: MySQL  Version: 8.0.17
+	Driver: MySQL Connector/J  Version: mysql-connector-java-8.0.17 (Revision: 16a712ddb3f826a1933ab42b0039f7fb9eebc6ec)
+[EL Info]: connection: 2020-05-24 11:43:57.682--ServerSession(987937555)--file:/D:/Java Projects 2/Final/build/classes/_FinalPU login successful
+[EL Fine]: sql: 2020-05-24 11:43:57.683--ServerSession(987937555)--Connection(33650007)--SELECT Id FROM borrowers WHERE Id <> Id
+[EL Fine]: sql: 2020-05-24 11:43:57.684--ServerSession(987937555)--Connection(33650007)--SELECT id FROM books WHERE id <> id
+[EL Fine]: sql: 2020-05-24 11:43:57.685--ServerSession(987937555)--Connection(33650007)--SELECT id FROM users WHERE id <> id
+[EL Fine]: sql: 2020-05-24 11:43:57.685--ServerSession(987937555)--Connection(33650007)--SELECT book_id FROM borrowed_boooks WHERE book_id <> book_id
+[EL Fine]: sql: 2020-05-24 11:44:02.482--ServerSession(987937555)--Connection(33650007)--SELECT id, author, description, name FROM books WHERE (id = ?)
+	bind => [81]
+[EL Fine]: sql: 2020-05-24 11:44:02.485--ServerSession(987937555)--Connection(33650007)--SELECT t1.Id, t1.Address, t1.Email, t1.First_Name, t1.Gender, t1.Last_Name, t1.Mobile FROM borrowed_boooks t0, borrowers t1 WHERE ((t0.book_id = ?) AND (t1.Id = t0.borrower_id))
+	bind => [81]
+[EL Fine]: sql: 2020-05-24 11:44:02.49--ClientSession(1269427788)--Connection(33650007)--UPDATE books SET author = ? WHERE (id = ?)
+	bind => [jose, 81]
